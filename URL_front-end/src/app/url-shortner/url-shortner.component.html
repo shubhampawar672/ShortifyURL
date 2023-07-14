@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="input-container">
+    <input class="input-field" [(ngModel)]="longUrl" placeholder="Enter long URL" />
+    <button class="button" (click)="getShortUrl()"  [disabled]="!longUrl">Get Short URL</button>
+  </div>
+  <div *ngIf="shortUrl" class="short-url">
+    Short URL: <a [href]="shortUrl" (click)="gotooriginal()">{{ shortUrl }}</a>
+    <button (click)="copyToClipboard()" class="btn">Copy</button>
+  </div>
+</div>
+
+
